@@ -30,8 +30,6 @@ jobs:
           context: ./zookeeper
           file: ./zookeeper/Dockerfile
           push: true
-          build-args: |
-            "VERSION=${{ github.event.release.tag_name }}"
           tags: |
             ${{ secrets.DOCKER_BUILD_URL }}/zookeeper:${{ github.event.release.tag_name }}
       - name: Image digest

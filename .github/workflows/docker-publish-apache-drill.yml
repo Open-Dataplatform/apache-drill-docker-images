@@ -30,8 +30,6 @@ jobs:
           context: ./drill
           file: ./drill/Dockerfile
           push: true
-          build-args: |
-            "VERSION=${{ github.event.release.tag_name }}"
           tags: |
             ${{ secrets.DOCKER_BUILD_URL }}/apache-drill:${{ github.event.release.tag_name }}
       - name: Image digest
