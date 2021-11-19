@@ -30,4 +30,4 @@ COPY start.sh /usr/bin/start.sh
 COPY jars/* /opt/drill/jars/3rdparty/
 
 # Start Drill
-ENTRYPOINT /usr/bin/start.sh
+ENTRYPOINT ["/usr/bin/start.sh"]

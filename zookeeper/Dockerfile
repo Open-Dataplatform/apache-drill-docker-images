@@ -22,4 +22,4 @@ RUN printf "tickTime=2000\ndataDir=/var/lib/zookeeper\nclientPort=2181" > /opt/z
 
 # Start ZooKeeper
 COPY start.sh /usr/bin/start.sh
-ENTRYPOINT /usr/bin/start.sh
+ENTRYPOINT ["/usr/bin/start.sh"]
