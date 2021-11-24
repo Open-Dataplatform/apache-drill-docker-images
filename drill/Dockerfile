@@ -24,8 +24,14 @@ RUN /opt/drill/bin/sqlline -u jdbc:drill:zk=local --run=/tmp/version.sql
 
 # Copy Scripts
 COPY distrib-env.sh drill-distrib.conf /opt/drill/conf/
+RUN chmod +x /opt/drill/conf/distrib-env.sh
+
 COPY isLive.sh isReady.sh preStop.sh /opt/drill/bin/
+RUN chmod +x /opt/drill/bin/isLive.sh /opt/drill/bin/isReady.sh /opt/drill/bin/preStop.sh
+
 COPY start.sh /usr/bin/start.sh
+RUN chmod +x /usr/bin/start.sh
+
 
 COPY jars/* /opt/drill/jars/3rdparty/
 
