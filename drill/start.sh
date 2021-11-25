@@ -10,8 +10,6 @@ DRILL_MAX_MEMORY_VALUE=`echo ${DRILL_MAX_MEMORY} | tr -dc '0-9'`
 sed -i "s/__DRILL_MAX_MEMORY_VALUE__/${DRILL_MAX_MEMORY_VALUE}/g" ${DRILL_ENV_FILE}
 
 # Configuring ZK connection
-ZK_HOST="zk-service"
-ZK_PORT=2181
 sed -i '/cluster-id/d' ${DRILL_CONF_OVERRIDE_FILE}
 sed -i '/zk\.connect/d' ${DRILL_CONF_OVERRIDE_FILE}
 sed -i "s/__ZK_HOST__/${ZK_HOST}/g" ${DRILL_CONF_FILE}
